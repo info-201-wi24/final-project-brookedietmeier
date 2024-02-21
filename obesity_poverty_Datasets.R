@@ -7,7 +7,7 @@ obesity_df <- read.csv("/Users/brookedietmeier/Desktop/Info_201_joining_datasets
 poverty_df <- read.csv("/Users/brookedietmeier/Desktop/Info_201_joining_datasets/final-project-brookedietmeier/poverty_state_grid_table.csv", skip = 3, header = TRUE)
 nutrition_df <- read.csv("/Users/brookedietmeier/Desktop/Info_201_joining_datasets/final-project-brookedietmeier/Nutrition__Physical_Activity__and_Obesity_-_Behavioral_Risk_Factor_Surveillance_System.csv")
 
-##hihihiajdslfk
+#changed the dataset to be from 2020-2022 to match other datasets
 nutrition_df <- nutrition_df %>% 
   filter(YearStart == "2020" | YearStart == "2021" | YearStart == "2022")
 
