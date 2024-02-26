@@ -24,19 +24,18 @@ nutrition_df <- nutrition_df %>%
 
 #join datasets
 # First join poverty_df and obesity_df
-temp_df <- inner_join(poverty_df, obesity_df, by = "State")
+poverty_obesity_df <- inner_join(poverty_df, obesity_df, by = "State")
 
-# Then join the result with nutrition_df
-obesity_poverty_df <- inner_join(temp_df, nutrition_df, by = "State")
+combined_df <- inner_join(poverty_obesity_df, nutrition_df, by = "State")
 
 
 #rename column names to properly identify data in joined dataset 
-obesity_poverty_df <- obesity_poverty_df %>% 
+combined_df <- combined_df %>% 
                       rename(`Poverty Rate` = Rate)
 
-obesity_poverty_df <- obesity_poverty_df %>% 
+combined_df <- combined_df %>% 
                       rename(`Obesity Prevelance` = Prevalence)
 
 #save unified dataset to a new file 
-write.csv(obesity_poverty_df, "Unified_dataset.csv", row.names = FALSE)
+write.csv(combined_df, "Unified_dataset.csv", row.names = FALSE)
 
